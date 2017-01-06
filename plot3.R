@@ -1,0 +1,12 @@
+#Sys.setenv(LANG = "en")
+Sys.setlocale("LC_ALL", 'en_US.UTF-8')
+dataset <- read.table("household_power_consumption.txt", header=TRUE, sep=";", stringsAsFactors=FALSE)
+plot3 <- subset(dataset, Date == "1/2/2007" | Date == "2/2/2007")
+#concatenate date and time
+DateTime <- paste(plot3$Date,plot3$Time)
+png(filename = "plot3.png",width = 480, height = 480)
+plot(strptime(DateTime, "%d/%m/%Y %H:%M:%S"),plot2$Sub_metering_1,type = "l", xlab = "", ylab = "Energy sub metering")
+lines(strptime(DateTime, "%d/%m/%Y %H:%M:%S"),plot2$Sub_metering_2,type = "l", col = "red")
+lines(strptime(DateTime, "%d/%m/%Y %H:%M:%S"),plot2$Sub_metering_3,type = "l", col = "purple")
+legend("topright",lty=1, col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+dev.off()
