@@ -15,7 +15,8 @@ plot(strptime(DateTime, "%d/%m/%Y %H:%M:%S"),plot4$Sub_metering_1,type = "l", xl
 lines(strptime(DateTime, "%d/%m/%Y %H:%M:%S"),plot4$Sub_metering_2,type = "l", col = "red")
 lines(strptime(DateTime, "%d/%m/%Y %H:%M:%S"),plot4$Sub_metering_3,type = "l", col = "purple")
 legend("topright",lty=1, col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), bty = "n")
-s#4
+#4
 plot(strptime(DateTime, "%d/%m/%Y %H:%M:%S"),plot4$Global_reactive_power,type = "l", xlab = "datetime", ylab = "Global_reactive_power")
 
 dev.off()
+
